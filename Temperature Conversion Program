@@ -1,0 +1,34 @@
+
+#include <iostream>
+#include <cctype>
+using namespace std;
+
+int main() 
+{
+  cout << "Enter a temperature and the unit of measurement: ";
+  double temp;
+  char unit;
+  cin >> temp >> unit;
+  unit = tolower(unit);
+  double celsius, fahrenheit, kelvin;
+  if (unit == 'c'){
+    fahrenheit = (temp * 9/5) + 32;
+    kelvin = temp + 273.15;
+    cout << "\nThe temperature in Fahrenheit is: " << fahrenheit << "\u00B0F\n" << endl;
+     cout << "The temperature in Kelvin is: " << kelvin << "\u00B0K\n" << endl;
+  } else if (unit == 'f')
+  {
+    celsius = (temp * 9/5) + 32;
+    kelvin = (temp - 273.15) * 9/5 + 32;
+    cout << "\nThe temperature in Celsuis is: " << celsius << "\u00B0C\n" << endl;
+     cout << "The temperature in Kelvin is: " << kelvin << "\u00B0K\n" << endl;
+  } else if (unit == 'k') {
+    celsius = (temp - 273.15);
+    fahrenheit = (temp - 273.15) * 9/5 +32;
+    cout << "\nThe temperature in Celsuis is: " << celsius << "\u00B0C\n" << endl;
+     cout << "The temperature in Fahrenheit is: " << fahrenheit << "\u00B0F\n" << endl;
+  }  
+   else {
+     cout << "\nUnknown unit of measurement\n Enter 'C', 'F', or 'K'" << endl;
+   }
+}
